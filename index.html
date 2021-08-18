@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google map example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyCCTIB4_pXsxLHzeqQiRKv4H2VeKColYsg"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCTIB4_pXsxLHzeqQiRKv4H2VeKColYsg&callback=initApp&libraries=places&v=weekly"></script>
+  <script src="js/geolocation-marker.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="map"></div>
+      </div>
+    </div>
+    <div class="row form-controller">
+      <div class="col-lg-6">
+        <form>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Origin location:</label>
+                <input type="text" class="form-control search-input" id="search_input_from" placeholder="Origin location" />
+              </div>
+              <div class="form-group">
+                <label>Distination location:</label>
+                <input type="text" class="form-control search-input" id="search_input_to" placeholder="Distination location" />
+              </div>
+              <div class="form-group">
+                <label>Travel mode:</label>
+                <select class="form-control" id="ddl-travel-mode">
+                  <option value="DRIVING" selected>DRIVING</option>
+                  <option value="WALKING">WALKING</option>
+                  <option value="BICYCLING">BICYCLING</option>
+                  <option value="TRANSIT">TRANSIT</option>
+                  <option value="TWO_WHEELER">TWO_WHEELER</option>
+                </select>
+              </div>
+            </div>
+          </div>
+       
+          <div class="row">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-success">
+                Direction
+              </button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+        
+      <div class="col-lg-6">
+        <div class="form-group" id="div-direction">
+          <label>Result directions:</label>
+          <p>Distance: <span id="distance"></span></p>
+          <p>Duration: <span id="duration"></span></p>
+        </div>
+        <div class="alert alert-danger" role="alert" id="div-direction-error">Could not retrieve driving distance</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
