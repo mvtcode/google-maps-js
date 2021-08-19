@@ -7,6 +7,7 @@ Demo Google maps javascript
 - Maps JavaScript API
 - Places API
 - Directions API
+- Distance matrix
 
 ## Configuration
 
